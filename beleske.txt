@@ -1,0 +1,46 @@
+YouTube: https://www.youtube.com/watch?v=Rel5ymzBBFE
+
+H2 baza: http://localhost:8080/h2
+swagger: http://localhost:8080/swagger-ui/index.html
+
+------------------------------------------------------------------------------------
+GET - Get book by id
+http://localhost:8080/api/bookstore/book/2
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+POST - Create book
+http://localhost:8080/api/bookstore/book/create
+u body-u se salje:
+{
+    "title": "Book - new book",
+    "author": "Author - new autho",
+    "price": 22.45,
+    "imageUrl": "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+}
+
+Backend kao response vraca book objekat koji je kreiran sa id-om koji je dobio u bazi
+
+Ako se u repository.save() metodu prosledi book objekat koji ima id onda ce hibernate uraditi update a ako se
+prosledi book objekat bez id-a onda ce kreirati novi red u bazi.
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+PUT - Update book by id
+U body-u se salje book objekat sa novim podacima. Iz ovog objekta se uzimaju podaci i radi se update u bazi
+http://localhost:8080/api/bookstore/book/2
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+DELETE - Delete book by id
+http://localhost:8080/api/bookstore/book/2
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
